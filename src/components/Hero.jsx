@@ -24,8 +24,7 @@ const Hero = () => {
         <div className="hero-layout">
           <div className="hero-main">
             <h1 className="hero-title">
-              <span className="hero-line">AI-лаборатория</span>
-              <span className="hero-line">оптимизации</span>
+              <span className="hero-line">AI-лаборатория оптимизации</span>
               <span className="hero-line">бизнеса</span>
             </h1>
             <a href="#forma" className="btn btn-hero" onClick={(e) => handleLinkClick(e, '#forma')}>
