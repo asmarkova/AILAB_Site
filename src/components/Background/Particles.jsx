@@ -116,6 +116,9 @@ export function Particles({
   useFrame((state, delta) => {
     if (!dofPointsMaterial || !simulationMaterial) return
 
+    // Request next frame for continuous animation
+    state.invalidate()
+
     state.gl.setRenderTarget(target)
     state.gl.clear()
     state.gl.render(scene, camera)
@@ -136,28 +139,31 @@ export function Particles({
       setIsRevealing(false)
     }
 
-    dofPointsMaterial.uniforms.uTime.value = currentTime
-    dofPointsMaterial.uniforms.uFocus.value = focus
-    dofPointsMaterial.uniforms.uBlur.value = blur
+    // Update only necessary uniforms
+    const uniforms = dofPointsMaterial.uniforms
+    uniforms.uTime.value = currentTime
+    uniforms.uFocus.value = focus
+    uniforms.uBlur.value = blur
 
-    easing.damp(dofPointsMaterial.uniforms.uTransition, "value", introspect ? 1.0 : 0.0, introspect ? 0.35 : 0.2, delta)
+    easing.damp(uniforms.uTransition, "value", introspect ? 1.0 : 0.0, introspect ? 0.35 : 0.2, delta)
 
     simulationMaterial.uniforms.uTime.value = currentTime
     simulationMaterial.uniforms.uNoiseScale.value = noiseScale
     simulationMaterial.uniforms.uNoiseIntensity.value = noiseIntensity
     simulationMaterial.uniforms.uTimeScale.value = timeScale * speed
 
-    dofPointsMaterial.uniforms.uPointSize.value = pointSize
-    dofPointsMaterial.uniforms.uOpacity.value = opacity
-    dofPointsMaterial.uniforms.uRevealFactor.value = revealFactor
-    dofPointsMaterial.uniforms.uRevealProgress.value = easedProgress
-    dofPointsMaterial.uniforms.uColorR.value = colorR
-    dofPointsMaterial.uniforms.uColorG.value = colorG
-    dofPointsMaterial.uniforms.uColorB.value = colorB
-    dofPointsMaterial.uniforms.uSparkleSpeed.value = sparkleSpeed
-    dofPointsMaterial.uniforms.uAsciiTexture.value = asciiTexture
-    dofPointsMaterial.uniforms.uUseAscii.value = useAscii ? 1.0 : 0.0
-    dofPointsMaterial.uniforms.uCharCount.value = asciiChar ? asciiChar.length : 1
+    // Batch uniform updates
+    uniforms.uPointSize.value = pointSize
+    uniforms.uOpacity.value = opacity
+    uniforms.uRevealFactor.value = revealFactor
+    uniforms.uRevealProgress.value = easedProgress
+    uniforms.uColorR.value = colorR
+    uniforms.uColorG.value = colorG
+    uniforms.uColorB.value = colorB
+    uniforms.uSparkleSpeed.value = sparkleSpeed
+    uniforms.uAsciiTexture.value = asciiTexture
+    uniforms.uUseAscii.value = useAscii ? 1.0 : 0.0
+    uniforms.uCharCount.value = asciiChar ? asciiChar.length : 1
   })
 
   return (

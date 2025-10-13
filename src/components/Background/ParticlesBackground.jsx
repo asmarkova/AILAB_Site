@@ -14,7 +14,7 @@ export const ParticlesBackground = () => {
     colorR: 0.57,
     colorG: 0,
     colorB: 1,
-    particleCount: 512,
+    particleCount: 256, // Reduced from 512 for better performance
     sparkleSpeed: 0.9,
     blur: 31,
     asciiChar: "011",
@@ -30,6 +30,9 @@ export const ParticlesBackground = () => {
           near: 0.01,
           far: 300,
         }}
+        dpr={[1, 1.5]} // Limit pixel ratio for performance
+        performance={{ min: 0.5 }} // Allow frame rate to drop if needed
+        frameloop="demand" // Only render when needed
       >
         <color attach="background" args={["#000"]} />
         <Particles
