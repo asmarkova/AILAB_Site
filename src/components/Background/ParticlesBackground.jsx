@@ -32,7 +32,6 @@ export const ParticlesBackground = () => {
         }}
         dpr={[1, 1.5]} // Limit pixel ratio for performance
         performance={{ min: 0.5 }} // Allow frame rate to drop if needed
-        frameloop="demand" // Only render when needed
         gl={{ alpha: true }} // Enable transparency
       >
         <Particles

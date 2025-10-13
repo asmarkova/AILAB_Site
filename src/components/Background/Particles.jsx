@@ -116,9 +116,6 @@ export function Particles({
   useFrame((state, delta) => {
     if (!dofPointsMaterial || !simulationMaterial) return
 
-    // Request next frame for continuous animation
-    state.invalidate()
-
     state.gl.setRenderTarget(target)
     state.gl.clear()
     state.gl.render(scene, camera)
