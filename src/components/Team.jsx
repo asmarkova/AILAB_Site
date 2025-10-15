@@ -8,7 +8,7 @@ const Team = () => {
     {
       name: 'Artem Panferov',
       role: 'Founder, CEO, AI Optimization Expert',
-      photo: '/Team/Артем Панферов.png'
+      photo: '/Team/Артем Панферов-compressed.jpeg'
     },
     {
       name: 'Anastasia Markova',
@@ -18,12 +18,12 @@ const Team = () => {
     {
       name: 'Pavel Panferov',
       role: 'Co-Founder, Head of development, Business Analyst',
-      photo: '/Team/Павел Панферов.JPG'
+      photo: '/Team/Павел-compressed.jpeg'
     },
     {
       name: 'Sergey Kazharaliev',
       role: 'Co-Founder, COO, Business Analyst',
-      photo: '/Team/Sergey Kazharaliev.jpeg'
+      photo: '/Team/Sergey Kazharaliev-compressed.jpeg'
     },
     {
       name: 'Nikita Terentyev',
@@ -38,17 +38,17 @@ const Team = () => {
     {
       name: 'Abdulbosit Holikov',
       role: 'Developer',
-      photo: '/Team/Abdulbosit Holikov.JPG'
+      photo: '/Team/Abdulbosit-compressed.jpeg'
     },
     {
       name: 'Aziza Maksumova',
       role: 'Business Assistant, Project Manager',
-      photo: '/Team/Aziza Maksumova.png'
+      photo: '/Team/Aziza-compressed.jpeg'
     }
   ];
 
-  const cardWidth = 280;
-  const gap = 48;
+  const cardWidth = 260;
+  const gap = 32;
   const slideWidth = cardWidth + gap;
   const totalCards = teamMembers.length;
 
@@ -87,15 +87,30 @@ const Team = () => {
   return (
     <section id="team" className="section team">
       <div className="container">
-        <h2 className="team-title">Специалисты лаборатории</h2>
+        <div className="team-header">
+          <h2 className="team-title">Специалисты лаборатории</h2>
+          <div className="team-controls">
+            <button
+              className="slider-btn slider-btn-prev"
+              onClick={handlePrev}
+              aria-label="Предыдущий"
+            >
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <button
+              className="slider-btn slider-btn-next"
+              onClick={handleNext}
+              aria-label="Следующий"
+            >
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
         <div className="team-slider-wrapper">
-          <button
-            className="team-slider-nav team-slider-prev"
-            onClick={handlePrev}
-            aria-label="Previous"
-          >
-            ←
-          </button>
           <div className="team-slider">
             <div className="team-slider-track" ref={sliderTrackRef}>
               {/* Render all members twice for infinite loop effect */}
@@ -112,13 +127,6 @@ const Team = () => {
               ))}
             </div>
           </div>
-          <button
-            className="team-slider-nav team-slider-next"
-            onClick={handleNext}
-            aria-label="Next"
-          >
-            →
-          </button>
         </div>
       </div>
     </section>

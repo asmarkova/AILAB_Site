@@ -70,11 +70,20 @@ const Projects = () => {
             <div
               key={index}
               className={`case-card ${caseItem.featured ? 'case-card-featured' : ''}`}
-              data-animate
+              style={{
+                backgroundColor: 'rgba(26, 26, 26, 0.6)',
+                border: '1px solid rgba(255, 255, 255, 0.06)',
+                borderRadius: '12px',
+                padding: '2rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                minHeight: '200px'
+              }}
             >
               <div className="case-header">
-                <h3 className="case-name">{caseItem.name}</h3>
-                <span className="case-type">{caseItem.type}</span>
+                <h3 className="case-name" style={{color: '#ffffff', fontSize: '1.25rem'}}>{caseItem.name}</h3>
+                <span className="case-type" style={{color: '#a0a0a0', fontSize: '0.875rem'}}>{caseItem.type}</span>
               </div>
               <div className="case-content">
                 <p className="case-label">О сотрудничестве:</p>

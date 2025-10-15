@@ -27,6 +27,7 @@ const Hero = () => {
               <span className="hero-line">AI-лаборатория</span>
               <span className="hero-line">оптимизации бизнеса</span>
             </h1>
+            <p className="hero-subtitle">Объединяем потенциал человека и силу AI в бизнесе</p>
             <a href="#forma" className="btn btn-hero" onClick={(e) => handleLinkClick(e, '#forma')}>
               Обсудить проект
             </a>

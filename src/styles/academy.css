@@ -1,0 +1,815 @@
+/* ===============================================
+   AI LAB Academy Page Styles
+   =============================================== */
+
+/* All sections should be above grid */
+.academy-problem,
+.academy-solution,
+.academy-experts,
+.academy-pricing,
+.academy-cta,
+.big-quote-section,
+.bento-info,
+.youtube-video,
+.projects,
+.projects-cta,
+.testimonials,
+.partners {
+  position: relative;
+  z-index: 20;
+}
+
+/* Hero Section - Expanded with centered text in lower third */
+.academy-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 15vh;
+  padding-top: 120px;
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+/* Global grid pattern for entire Academy page */
+.grid-pattern-global {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.academy-hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to bottom, transparent, #0a0a0a);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.academy-hero .container {
+  position: relative;
+  z-index: 20;
+}
+
+.academy-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.academy-hero-title {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.academy-hero-subtitle {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #a0a0a0;
+  margin-bottom: 2.5rem;
+}
+
+.academy-hero-actions .btn-lg {
+  padding: 1.25rem 3rem;
+  font-size: 1rem;
+}
+
+/* Problem Section - styled like red warning block */
+.academy-problem {
+  padding: 3rem 0;
+  background-color: transparent;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.academy-problem.fade-up-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.academy-problem-content {
+  background: rgba(26, 26, 26, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.academy-problem-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), transparent);
+}
+
+.academy-problem-title {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Solution Section - compact with photo slider */
+.academy-solution {
+  padding: 3rem 0;
+  background-color: transparent;
+}
+
+.academy-solution-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.academy-solution-title {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.academy-solution-subtitle {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #a0a0a0;
+}
+
+.academy-solution-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.academy-results {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.academy-result-card {
+  background: rgba(26, 26, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.academy-result-card:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  background: rgba(26, 26, 26, 0.8);
+}
+
+.academy-result-title {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.academy-result-text {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 0.938rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #a0a0a0;
+}
+
+/* Photos Slider in Solution */
+.academy-solution-photos {
+  position: relative;
+}
+
+.academy-photos-slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.academy-photos-slider {
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: rgba(26, 26, 26, 0.6);
+}
+
+.academy-photos-slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.academy-photo-slide {
+  flex: 0 0 100%;
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  max-height: 400px;
+}
+
+.academy-photo-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Experts Section */
+.academy-experts {
+  padding: 3rem 0;
+  background-color: transparent;
+}
+
+.academy-experts-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.academy-experts-title {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.academy-experts-subtitle {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #a0a0a0;
+}
+
+.academy-experts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.academy-expert-card {
+  background: rgba(26, 26, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.academy-expert-card:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  background: rgba(26, 26, 26, 0.8);
+}
+
+.academy-expert-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.academy-expert-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  flex-shrink: 0;
+}
+
+.academy-expert-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.academy-expert-info {
+  flex: 1;
+}
+
+.academy-expert-name {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.academy-expert-role {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 0.938rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #8b5cf6;
+}
+
+.academy-expert-bio {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.academy-expert-bio li {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 0.938rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #a0a0a0;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.academy-expert-bio li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #8b5cf6;
+  font-size: 1.2rem;
+}
+
+.academy-expert-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.academy-expert-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 0.813rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  background: rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.academy-expert-link:hover {
+  background: rgba(139, 92, 246, 0.3);
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+.academy-expert-link svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Pricing Section */
+.academy-pricing {
+  padding: 3rem 0;
+  background-color: transparent;
+}
+
+.academy-pricing-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.academy-pricing-title {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.academy-pricing-subtitle {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #a0a0a0;
+}
+
+.academy-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.academy-pricing-card {
+  background: rgba(26, 26, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+
+.academy-pricing-card.featured {
+  border-color: rgba(139, 92, 246, 0.4);
+  background: rgba(26, 26, 26, 0.8);
+}
+
+.academy-pricing-card:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  background: rgba(26, 26, 26, 0.8);
+  transform: translateY(-4px);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #8b5cf6;
+  color: #ffffff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 0.813rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.pricing-header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 1.5rem;
+}
+
+.pricing-name {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.pricing-duration {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #666666;
+  margin-bottom: 1rem;
+}
+
+.pricing-price {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #8b5cf6;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-note {
+  display: block;
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 0.813rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #666666;
+  margin-top: 0.5rem;
+}
+
+.pricing-ideal {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #8b5cf6;
+  font-style: italic;
+}
+
+.pricing-body {
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.pricing-description {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 0.938rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #a0a0a0;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #a0a0a0;
+}
+
+.pricing-features li svg {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  color: #8b5cf6;
+}
+
+.pricing-result {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #a0a0a0;
+}
+
+.pricing-result strong {
+  color: #8b5cf6;
+}
+
+.pricing-footer {
+  margin-top: auto;
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+/* CTA Section */
+.academy-cta {
+  padding: 3rem 0;
+  background-color: transparent;
+}
+
+.academy-cta-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(26, 26, 26, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.academy-cta-content {
+  flex: 1;
+  text-align: left;
+}
+
+.academy-cta-title {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.academy-cta-text {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.03em;
+  color: #a0a0a0;
+  margin-bottom: 0;
+}
+
+.btn-telegram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  font-size: 1rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.btn-telegram svg {
+  flex-shrink: 0;
+}
+
+.academy-cta-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.form-input::placeholder {
+  color: #666666;
+}
+
+select.form-input {
+  cursor: pointer;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .academy-solution-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .academy-experts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .academy-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .academy-hero {
+    padding-bottom: 10vh;
+  }
+
+  .academy-hero-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .academy-problem-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .academy-problem-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .academy-result-card {
+    padding: 1.25rem;
+  }
+
+  .academy-expert-card {
+    padding: 1.5rem;
+  }
+
+  .academy-expert-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .academy-expert-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .academy-pricing-card {
+    min-height: auto;
+  }
+
+  .academy-cta-wrapper {
+    padding: 2rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .academy-cta-content {
+    text-align: center;
+  }
+
+  .btn-telegram {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .academy-hero-content {
+    padding: 0 1rem;
+  }
+
+  .academy-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .academy-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .academy-problem-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .academy-cta-wrapper {
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .academy-cta-content {
+    text-align: center;
+  }
+
+  .btn-telegram {
+    width: 100%;
+    justify-content: center;
+  }
+}

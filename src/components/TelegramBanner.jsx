@@ -4,7 +4,7 @@ const TelegramBanner = () => {
       <div className="container">
         <div className="telegram-banner-wrapper">
           <div className="telegram-photo">
-            <img src="/Team/Артем Панферов.png" alt="Artem Panferov" />
+            <img src="/Team/Артем Панферов-compressed.jpeg" alt="Artem Panferov" />
           </div>
           <div className="telegram-content">
             <h3 className="telegram-title">Хотите знать больше о нейросетях?</h3>

@@ -5,7 +5,7 @@ const BentoInfo = () => {
         <div className="bento-grid">
           {/* Photo Card */}
           <div className="bento-card bento-photo">
-            <img src="/Блок доп.инфо/ФОто общее 3 основателей.png" alt="AI LAB Founders" />
+            <img src="/Блок доп.инфо/AI LAB Founders-compressed.jpeg" alt="AI LAB Founders" />
           </div>
 
           {/* 700+ Card */}
