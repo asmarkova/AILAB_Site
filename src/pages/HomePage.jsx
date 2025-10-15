@@ -17,6 +17,7 @@ import Testimonials from '../components/Testimonials';
 import Team from '../components/Team';
 import Partners from '../components/Partners';
 import CTA from '../components/CTA';
+import YouTubeCarousel from '../components/YouTubeCarousel';
 import Articles from '../components/Articles';
 import Footer from '../components/Footer';
 
@@ -50,6 +51,7 @@ const HomePage = () => {
       <Team />
       <Partners />
       <CTA />
+      <YouTubeCarousel />
       <Articles />
       <Footer />
     </>
