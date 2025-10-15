@@ -1427,15 +1427,27 @@ button {
 }
 
 .partners-grid {
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
     position: relative;
     padding: var(--spacing-md) 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.partners-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .partners-scroll {
     display: flex;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-md);
     animation: scroll 30s linear infinite;
+}
+
+.partners-grid:hover .partners-scroll {
+    animation-play-state: paused;
 }
 
 .partner-logo {
@@ -1893,8 +1905,9 @@ button {
 
     /* Big Quote */
     .big-quote blockquote p {
-        font-size: clamp(1.25rem, 5vw, 1.75rem);
+        font-size: clamp(1.1rem, 4.5vw, 1.5rem);
         line-height: 1.5;
+        padding: 0 var(--spacing-sm);
     }
 
     /* About section */
@@ -1909,15 +1922,15 @@ button {
 
     .about-heading {
         font-size: 2rem;
-        text-align: center;
+        text-align: left;
     }
 
     .about-description {
-        text-align: center;
+        text-align: left;
     }
 
     .about-quote {
-        text-align: center;
+        text-align: left;
     }
 
     .about-quote .quote-highlight {
@@ -2224,13 +2237,17 @@ button {
         padding: var(--spacing-sm) 0;
     }
 
+    .partners-scroll {
+        gap: var(--spacing-sm);
+    }
+
     .partner-logo {
-        min-width: 120px;
+        min-width: 100px;
     }
 
     .partner-logo img {
-        max-width: 120px;
-        max-height: 40px;
+        max-width: 100px;
+        max-height: 35px;
     }
 
     /* Footer */

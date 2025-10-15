@@ -46,6 +46,8 @@ const Testimonials = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const textRefs = useRef([]);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
   // Auto-play slider
   useEffect(() => {
@@ -145,6 +147,32 @@ const Testimonials = () => {
     }, 200);
   };
 
+  // Swipe handlers
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrev();
+    }
+  };
+
   const getVisibleTestimonials = () => {
     const visible = [];
     for (let i = 0; i < 3; i++) {
@@ -189,7 +217,12 @@ const Testimonials = () => {
           </div>
         </div>
 
-        <div className="testimonials-slider">
+        <div
+          className="testimonials-slider"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           <div className={`testimonials-track ${isAnimating ? 'animating' : ''}`}>
             {getVisibleTestimonials().map((testimonial, index) => {
               const testimonialIndex = (currentIndex + index) % testimonials.length;
