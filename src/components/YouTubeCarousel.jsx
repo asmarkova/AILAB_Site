@@ -40,10 +40,10 @@ const YouTubeCarousel = () => {
     }
   ];
 
-  // Create duplicated array for infinite loop effect
-  const videos = [...originalVideos, ...originalVideos];
+  // Create tripled array for true infinite scrolling
+  const videos = [...originalVideos, ...originalVideos, ...originalVideos];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(originalVideos.length);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
@@ -52,9 +52,10 @@ const YouTubeCarousel = () => {
   const goToNext = () => {
     setCurrentIndex((prevIndex) => {
       const nextIndex = prevIndex + 1;
-      // Reset to beginning when reaching the end of first set
-      if (nextIndex >= originalVideos.length) {
-        return 0;
+      // When reaching end of second set, jump back to middle set
+      if (nextIndex >= originalVideos.length * 2) {
+        setTimeout(() => setCurrentIndex(originalVideos.length), 0);
+        return nextIndex;
       }
       return nextIndex;
     });
@@ -63,9 +64,10 @@ const YouTubeCarousel = () => {
   const goToPrev = () => {
     setCurrentIndex((prevIndex) => {
       const prevIdx = prevIndex - 1;
-      // Go to end when going before first
-      if (prevIdx < 0) {
-        return originalVideos.length - 1;
+      // When reaching start of middle set, jump to end of middle set
+      if (prevIdx < originalVideos.length) {
+        setTimeout(() => setCurrentIndex(originalVideos.length * 2 - 1), 0);
+        return prevIdx;
       }
       return prevIdx;
     });
@@ -98,16 +100,13 @@ const YouTubeCarousel = () => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
+  const getActiveDotIndex = () => {
+    return currentIndex % originalVideos.length;
+  };
+
   return (
     <section className="section youtube-carousel">
       <div className="container">
-        <div className="youtube-carousel-header">
-          <h2 className="section-title">Видео с наших мероприятий</h2>
-          <p className="youtube-carousel-subtitle">
-            Посмотрите, как проходят наши воркшопы и тренинги
-          </p>
-        </div>
-
         <div className="youtube-carousel-wrapper">
           <button
             className="slider-btn slider-btn-prev youtube-carousel-btn-prev"
@@ -131,7 +130,7 @@ const YouTubeCarousel = () => {
             >
               {videos.map((video, index) => (
                 <div
-                  key={video.id}
+                  key={`${video.id}-${index}`}
                   className="youtube-carousel-card"
                   onClick={() => handleVideoClick(video.url)}
                 >
@@ -164,8 +163,8 @@ const YouTubeCarousel = () => {
           {originalVideos.map((_, index) => (
             <button
               key={index}
-              className={`dot ${index === currentIndex ? 'active' : ''}`}
-              onClick={() => setCurrentIndex(index)}
+              className={`dot ${index === getActiveDotIndex() ? 'active' : ''}`}
+              onClick={() => setCurrentIndex(originalVideos.length + index)}
               aria-label={`Go to video ${index + 1}`}
             />
           ))}
