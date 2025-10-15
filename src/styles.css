@@ -2648,11 +2648,10 @@ button {
 .slider-btn:hover {
     background: var(--color-accent-primary);
     border-color: var(--color-accent-primary);
-    transform: scale(1.05);
 }
 
 .slider-btn:active {
-    transform: scale(0.95);
+    opacity: 0.8;
 }
 
 .slider-btn svg {
