@@ -14,6 +14,7 @@ import Testimonials from '../components/Testimonials';
 import Partners from '../components/Partners';
 import AcademyPricing from '../components/Academy/AcademyPricing';
 import AcademyCTA from '../components/Academy/AcademyCTA';
+import YouTubeCarousel from '../components/YouTubeCarousel';
 import Footer from '../components/Footer';
 
 const AcademyPage = () => {
@@ -34,6 +35,7 @@ const AcademyPage = () => {
       <Partners />
       <AcademyPricing />
       <AcademyCTA />
+      <YouTubeCarousel />
       <Footer />
     </div>
   );
