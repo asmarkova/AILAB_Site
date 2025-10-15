@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 const AIAcademy = () => {
   const images = [
-    '/Фото Обучение/1-compressed.jpeg',
-    '/Фото Обучение/2-compressed.jpeg',
-    '/Фото Обучение/3-compressed.jpeg',
-    '/Фото Обучение/4-compressed.jpeg',
-    '/Фото Обучение/5-compressed.jpeg',
-    '/Фото Обучение/6-compressed.jpeg',
-    '/Фото Обучение/7-compressed.jpeg',
-    '/Фото Обучение/8-compressed.jpeg',
-    '/Фото Обучение/9-compressed.jpeg'
+    '/training-photos/1-compressed.jpeg',
+    '/training-photos/2-compressed.jpeg',
+    '/training-photos/3-compressed.jpeg',
+    '/training-photos/4-compressed.jpeg',
+    '/training-photos/5-compressed.jpeg',
+    '/training-photos/6-compressed.jpeg',
+    '/training-photos/7-compressed.jpeg',
+    '/training-photos/8-compressed.jpeg',
+    '/training-photos/9-compressed.jpeg'
   ];
 
   const { currentIndex, goToNext, goToPrev, pauseAutoPlay, resumeAutoPlay } = useSlider(
