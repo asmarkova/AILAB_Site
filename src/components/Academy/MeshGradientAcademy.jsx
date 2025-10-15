@@ -30,8 +30,8 @@ export function MeshGradientAcademy({ speed = 0.5, colors }) {
       left: 0,
       width: '100%',
       height: '100%',
-      opacity: 0.6,
-      filter: 'blur(20px)',
+      opacity: 0.7,
+      filter: 'blur(12px)',
       zIndex: 0
     }}>
       <MeshGradient

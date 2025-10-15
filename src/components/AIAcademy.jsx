@@ -20,6 +20,10 @@ const AIAcademy = () => {
     5000
   );
 
+  const handleAcademyClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <section id="academy" className="section ai-academy">
       <div className="container">
@@ -31,7 +35,7 @@ const AIAcademy = () => {
               <p className="academy-subtitle">
                 Корпоративные тренинги, которые превращают AI-технологии в конкурентное преимущество вашей компании от эксперта лаборатории Артема Панферова
               </p>
-              <Link to="/academy" className="btn btn-primary btn-academy">
+              <Link to="/academy" className="btn btn-primary btn-academy" onClick={handleAcademyClick}>
                 Узнать больше
               </Link>
             </div>

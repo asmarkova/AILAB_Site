@@ -1,13 +1,13 @@
 const AcademyExperts = () => {
   const experts = [
     {
-      name: 'Артём Панфёров',
-      role: 'CEO и основатель AI LAB',
+      name: 'Artem Panferov',
+      role: 'Founder & CEO AI LAB, AI Optimization Expert',
       photo: '/Team/Артем Панферов-compressed.jpeg',
       bio: [
         'Серийный IT-предприниматель, CEO и основатель AI LAB, EndCode и Angel Connect.',
         'С 2018 года оптимизировал процессы в крупных энтерпрайзах: маркетплейс Ozon, DNS, Азбука Вкуса',
-        'Эксперт по AI-оптимизации бизнес-процессов.',
+        'Эксперт по AI-оптимизации бизнес-процессов. Ментор IT-стартапов',
         'AI-спикер и партнер бизнес-клуба ProBusiness для предпринимателей и топ-менеджеров в Ташкенте'
       ],
       links: [
@@ -41,11 +41,12 @@ const AcademyExperts = () => {
       ]
     },
     {
-      name: 'Павел Панфёров',
-      role: 'Руководитель отдела AI-разработки',
+      name: 'Pavel Panferov',
+      role: 'Co-Founder AI LAB, Head of AI Development',
       photo: '/Team/Павел-compressed.jpeg',
       bio: [
         'Соосновать и Руководитель отдела AI-разработки AI LAB и EndCode, студии разработки мобильных приложений',
+        'Бизнес-аналитик, консультант в области AI-оптимизации бизнес-процессов',
         'Спикер и ментор EdTech проектов и обучающих программ SkillBox и Zerocoder'
       ],
       links: [

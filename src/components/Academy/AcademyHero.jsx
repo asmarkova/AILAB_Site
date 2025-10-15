@@ -21,16 +21,16 @@ const AcademyHero = () => {
     <section className="section academy-hero">
       <MeshGradientAcademy
         speed={1.2}
-        colors={['#A78BFA', '#6D28D9', '#4C1D95', '#2D1B69', '#1A0F3D', '#0A0A0A']}
+        colors={['#1a1a1a', '#2d1b4e', '#4C1D95', '#6D28D9', '#7C3AED', '#8B5CF6']}
       />
       <div className="academy-hero-overlay"></div>
       <div className="container">
         <div className="academy-hero-content">
           <h1 className="academy-hero-title">
-            Объединяем потенциал человека и силу ИИ в бизнесе
+            Корпоративные<br />AI-тренинги от AI LAB
           </h1>
           <p className="academy-hero-subtitle">
-            Корпоративное обучение, превращающее AI-технологии<br />в конкурентное преимущество вашей компании
+            Превращаем потенциал человека и силу ИИ<br />в конкурентное преимущество вашей компании
           </p>
           <div className="academy-hero-actions">
             <a

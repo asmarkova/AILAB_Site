@@ -18,7 +18,7 @@ import Footer from '../components/Footer';
 
 const AcademyPage = () => {
   return (
-    <>
+    <div className="academy-page">
       <div className="grid-pattern-global"></div>
       <Navigation />
       <AcademyHero />
@@ -35,7 +35,7 @@ const AcademyPage = () => {
       <AcademyPricing />
       <AcademyCTA />
       <Footer />
-    </>
+    </div>
   );
 };
 

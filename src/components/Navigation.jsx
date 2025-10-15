@@ -1,24 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const location = useLocation();
   const isAcademyPage = location.pathname === '/academy';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [navBg, setNavBg] = useState('rgba(10, 10, 10, 0.8)');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.pageYOffset > 50) {
-        setNavBg('rgba(10, 10, 10, 0.95)');
-      } else {
-        setNavBg('rgba(10, 10, 10, 0.8)');
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -46,7 +32,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="nav" style={{ backgroundColor: navBg }}>
+    <nav className="nav">
       <div className="container">
         <div className="nav-content">
           <Link to="/" className="logo" onClick={closeMenu}>
@@ -55,10 +41,12 @@ const Navigation = () => {
           {isAcademyPage ? (
             <>
               <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`} id="navMenu">
-                <li><a href="#academy-solution" onClick={(e) => handleLinkClick(e, '#academy-solution')}>О программе</a></li>
+                <li><a href="#academy-solution" onClick={(e) => handleLinkClick(e, '#academy-solution')}>AI Academy</a></li>
                 <li><a href="#academy-experts" onClick={(e) => handleLinkClick(e, '#academy-experts')}>Эксперты</a></li>
+                <li><a href="#projects" onClick={(e) => handleLinkClick(e, '#projects')}>Кейсы</a></li>
+                <li><a href="#testimonials" onClick={(e) => handleLinkClick(e, '#testimonials')}>Отзывы</a></li>
                 <li><a href="#academy-pricing" onClick={(e) => handleLinkClick(e, '#academy-pricing')}>Пакеты</a></li>
-                <li><Link to="/" onClick={closeMenu}>Главная</Link></li>
+                <li><Link to="/" onClick={closeMenu}>Страница AI LAB</Link></li>
               </ul>
               <a href="#academy-cta" className="btn btn-primary" onClick={(e) => handleLinkClick(e, '#academy-cta')}>Связаться</a>
             </>
