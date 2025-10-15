@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const YouTubeCarousel = () => {
-  const videos = [
+  const originalVideos = [
     {
       id: 'LmY_UoXU4Bk',
       title: 'AI LAB Video 1',
@@ -40,6 +40,9 @@ const YouTubeCarousel = () => {
     }
   ];
 
+  // Create duplicated array for infinite loop effect
+  const videos = [...originalVideos, ...originalVideos];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
@@ -47,11 +50,25 @@ const YouTubeCarousel = () => {
   const minSwipeDistance = 50;
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % videos.length);
+    setCurrentIndex((prevIndex) => {
+      const nextIndex = prevIndex + 1;
+      // Reset to beginning when reaching the end of first set
+      if (nextIndex >= originalVideos.length) {
+        return 0;
+      }
+      return nextIndex;
+    });
   };
 
   const goToPrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + videos.length) % videos.length);
+    setCurrentIndex((prevIndex) => {
+      const prevIdx = prevIndex - 1;
+      // Go to end when going before first
+      if (prevIdx < 0) {
+        return originalVideos.length - 1;
+      }
+      return prevIdx;
+    });
   };
 
   const onTouchStart = (e) => {
@@ -144,7 +161,7 @@ const YouTubeCarousel = () => {
         </div>
 
         <div className="youtube-carousel-dots">
-          {videos.map((_, index) => (
+          {originalVideos.map((_, index) => (
             <button
               key={index}
               className={`dot ${index === currentIndex ? 'active' : ''}`}
