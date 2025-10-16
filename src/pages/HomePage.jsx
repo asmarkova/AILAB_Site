@@ -1,6 +1,16 @@
 import { useEffect } from 'react';
 import { useScrollEffect } from '../hooks/useScrollEffect';
 
+// SEO Components
+import MetaTags from '../components/SEO/MetaTags';
+import {
+  organizationSchema,
+  professionalServiceSchema,
+  createWebPageSchema,
+  createFAQSchema,
+  homePageFAQs
+} from '../data/schemas';
+
 // Import all components
 import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
@@ -34,8 +44,32 @@ const HomePage = () => {
     console.log('%cСвяжитесь с нами: manager@ai-lab.company', 'color: #a0a0a0; font-size: 12px;');
   }, []);
 
+  // Create combined schema for HomePage
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema,
+      professionalServiceSchema,
+      createWebPageSchema(
+        "AI LAB — Разработка AI-агентов и автоматизация бизнеса",
+        "https://ai-lab.company/",
+        [{ name: "Главная", url: "https://ai-lab.company/" }]
+      ),
+      createFAQSchema(homePageFAQs)
+    ]
+  };
+
   return (
     <>
+      <MetaTags
+        title="AI LAB — Разработка AI-агентов и автоматизация бизнеса | Чат-боты и ИИ-решения"
+        description="Разработка AI-агентов, чат-ботов и ИИ-менеджеров по продажам. Автоматизация бизнес-процессов под ключ. Корпоративное обучение нейросетям. AI-аудит бизнеса от экспертов."
+        keywords="разработка AI агентов, создание чат-ботов, ИИ менеджер по продажам, автоматизация бизнес процессов, AI агенты для бизнеса, корпоративное обучение нейросетям, AI аудит бизнеса, внедрение искусственного интеллекта, GPT для бизнеса, разработка ИИ решений, консультации по искусственному интеллекту, оптимизация бизнеса с ИИ"
+        url="https://ai-lab.company/"
+        image="https://ai-lab.company/og-image-home.jpg"
+        canonicalUrl="https://ai-lab.company/"
+        schemaData={homeSchema}
+      />
       <Navigation />
       <Hero />
       <BigQuote />
