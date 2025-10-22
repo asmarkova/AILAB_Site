@@ -109,7 +109,7 @@ export const educationalOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   "name": "AI Academy by AI LAB",
-  "description": "Корпоративное обучение работе с нейросетями и искусственным интеллектом в Ташкенте от эксперта Артема Панферова",
+  "description": "Корпоративное обучение работе с нейросетями и искусственным интеллектом от эксперта Артема Панферова",
   "url": "https://ai-lab.company/academy",
   "email": "manager@ai-lab.company",
   "parentOrganization": {
