@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useScrollEffect } from '../hooks/useScrollEffect';
+import { useGeoLocation } from '../hooks/useGeoLocation';
 
 // SEO Components
 import MetaTags from '../components/SEO/MetaTags';
@@ -35,6 +36,9 @@ const HomePage = () => {
   // Initialize scroll animations
   useScrollEffect();
 
+  // Detect user's country
+  const { isUzbekistan, loading } = useGeoLocation();
+
   useEffect(() => {
     // Add loaded class to body when component mounts
     document.body.classList.add('loaded');
@@ -59,12 +63,42 @@ const HomePage = () => {
     ]
   };
 
+  // Dynamic SEO based on geolocation
+  const getLocalizedSEO = () => {
+    if (loading) {
+      // Default version while loading
+      return {
+        title: "AI LAB — Оптимизация бизнеса с помощью искусственного интеллекта",
+        description: "AI LAB. Оптимизация бизнеса с помощью искусственного интеллекта. Корпоративное обучение работе с нейросетями от эксперта Артема Панферова. AI-аудит. Разработка AI-инструментов для бизнеса.",
+        keywords: "AI LAB, оптимизация бизнеса искусственный интеллект, Артем Панферов AI, корпоративное обучение нейросетям, AI аудит бизнеса, разработка AI инструментов"
+      };
+    }
+
+    if (isUzbekistan) {
+      // Uzbekistan-specific version with Tashkent
+      return {
+        title: "AI LAB — Оптимизация бизнеса с помощью искусственного интеллекта | Ташкент",
+        description: "AI LAB. Оптимизация бизнеса с помощью искусственного интеллекта. Корпоративное обучение работе с нейросетями в Ташкенте от эксперта Артема Панферова. AI-аудит. Разработка AI-инструментов для бизнеса.",
+        keywords: "AI LAB Ташкент, оптимизация бизнеса искусственный интеллект, Артем Панферов AI, корпоративное обучение нейросетям Ташкент, AI аудит бизнеса, разработка AI инструментов Узбекистан, AI эксперт Ташкент"
+      };
+    }
+
+    // International version (Russia, Kazakhstan, etc.)
+    return {
+      title: "AI LAB — Оптимизация бизнеса с помощью искусственного интеллекта",
+      description: "AI LAB. Оптимизация бизнеса с помощью искусственного интеллекта. Корпоративное обучение работе с нейросетями от эксперта Артема Панферова. AI-аудит. Разработка AI-инструментов для бизнеса.",
+      keywords: "AI LAB, оптимизация бизнеса искусственный интеллект, Артем Панферов AI, корпоративное обучение нейросетям, AI аудит бизнеса, разработка AI инструментов, разработка AI агентов, создание чат-ботов, автоматизация бизнес процессов, обучение нейросетям, AI консалтинг"
+    };
+  };
+
+  const seoData = getLocalizedSEO();
+
   return (
     <>
       <MetaTags
-        title="AI LAB — Оптимизация бизнеса с помощью искусственного интеллекта"
-        description="AI LAB. Оптимизация бизнеса с помощью искусственного интеллекта. Корпоративное обучение работе с нейросетями от эксперта Артема Панферова. AI-аудит. Разработка AI-инструментов для бизнеса."
-        keywords="AI LAB, оптимизация бизнеса искусственный интеллект, Артем Панферов AI, корпоративное обучение нейросетям, AI аудит бизнеса, разработка AI инструментов, разработка AI агентов, создание чат-ботов, автоматизация бизнес процессов, обучение нейросетям, AI консалтинг"
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
         url="https://ai-lab.company/"
         image="https://ai-lab.company/og-image-home.jpg"
         canonicalUrl="https://ai-lab.company/"
