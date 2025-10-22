@@ -11,12 +11,13 @@ export const organizationSchema = {
   "alternateName": "AI Laboratory",
   "url": "https://ai-lab.company",
   "logo": "https://ai-lab.company/logo.png",
-  "description": "Разработка AI-агентов, чат-ботов и автоматизация бизнес-процессов. Корпоративное обучение работе с нейросетями.",
+  "description": "Оптимизация бизнеса с помощью искусственного интеллекта. Корпоративное обучение работе с нейросетями. AI-аудит. Разработка AI-инструментов для бизнеса.",
   "email": "manager@ai-lab.company",
   "address": {
     "@type": "PostalAddress",
-    "addressCountry": "RU",
-    "addressLocality": "Москва"
+    "addressCountry": "UZ",
+    "addressLocality": "Ташкент",
+    "addressRegion": "Ташкент"
   },
   "sameAs": [
     "https://t.me/ai_lab_company",
@@ -28,10 +29,16 @@ export const organizationSchema = {
     "availableLanguage": ["Russian"],
     "areaServed": "RU"
   },
-  "areaServed": {
-    "@type": "Country",
-    "name": "Russia"
-  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Uzbekistan"
+    },
+    {
+      "@type": "Country",
+      "name": "Russia"
+    }
+  ],
   "knowsAbout": [
     "Искусственный интеллект",
     "Разработка AI-агентов",
@@ -47,13 +54,14 @@ export const organizationSchema = {
 export const professionalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "AI LAB — Разработка AI-решений для бизнеса",
+  "name": "AI LAB — Оптимизация бизнеса с помощью искусственного интеллекта",
   "image": "https://ai-lab.company/logo.png",
   "url": "https://ai-lab.company",
   "address": {
     "@type": "PostalAddress",
-    "addressCountry": "RU",
-    "addressLocality": "Москва"
+    "addressCountry": "UZ",
+    "addressLocality": "Ташкент",
+    "addressRegion": "Ташкент"
   },
   "priceRange": "$$",
   "hasOfferCatalog": {
@@ -101,7 +109,7 @@ export const educationalOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   "name": "AI Academy by AI LAB",
-  "description": "Корпоративное обучение работе с нейросетями и искусственным интеллектом",
+  "description": "Корпоративное обучение работе с нейросетями и искусственным интеллектом в Ташкенте от эксперта Артема Панферова",
   "url": "https://ai-lab.company/academy",
   "email": "manager@ai-lab.company",
   "parentOrganization": {
@@ -110,8 +118,9 @@ export const educationalOrganizationSchema = {
   },
   "address": {
     "@type": "PostalAddress",
-    "addressCountry": "RU",
-    "addressLocality": "Москва"
+    "addressCountry": "UZ",
+    "addressLocality": "Ташкент",
+    "addressRegion": "Ташкент"
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -229,9 +238,9 @@ export const localBusinessSchema = {
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Москва",
-    "addressRegion": "Москва",
-    "addressCountry": "RU"
+    "addressLocality": "Ташкент",
+    "addressRegion": "Ташкент",
+    "addressCountry": "UZ"
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
