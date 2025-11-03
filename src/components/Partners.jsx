@@ -7,37 +7,37 @@ const Partners = () => {
   const partners = [
     {
       name: 'IT Park Uzbekistan',
-      logo: '/Партнеры лого/it-park-logo- 1.png',
+      logo: '/images/partners/it-park-logo- 1.png',
       url: 'https://it-park.uz/uz/itpark'
     },
     {
       name: 'Министерство',
-      logo: '/Партнеры лого/Министерство лого 2.png',
+      logo: '/images/partners/Министерство лого 2.png',
       url: 'https://digital.uz/ru'
     },
     {
       name: 'AICA',
-      logo: '/Партнеры лого/AICA 3.png',
+      logo: '/images/partners/AICA 3.png',
       url: 'https://aica.uz'
     },
     {
       name: 'School',
-      logo: '/Партнеры лого/School 4.png',
+      logo: '/images/partners/School 4.png',
       url: 'https://21-school.uz/ru/'
     },
     {
       name: 'Angel Connect',
-      logo: '/Партнеры лого/Angel Connect logo 5.png',
+      logo: '/images/partners/Angel Connect logo 5.png',
       url: 'https://angelconnect.uz/'
     },
     {
       name: 'Pro Business',
-      logo: '/Партнеры лого/Pro Business logo 6.png',
+      logo: '/images/partners/Pro Business logo 6.png',
       url: 'https://www.instagram.com/probusiness.tashkent/'
     },
     {
       name: 'Endcode',
-      logo: '/Партнеры лого/Endcode.logo7.png',
+      logo: '/images/partners/Endcode.logo7.png',
       url: 'https://endcode.io/'
     }
   ];

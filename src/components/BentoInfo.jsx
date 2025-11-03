@@ -11,7 +11,7 @@ const BentoInfo = () => {
         <div className="bento-grid">
           {/* Photo Card */}
           <div className="bento-card bento-photo">
-            <img src="/Блок доп.инфо/AI LAB Founders-compressed.jpeg" alt="AI LAB Founders" />
+            <img src="/images/info/AI LAB Founders-compressed.jpeg" alt="AI LAB Founders" />
           </div>
 
           {/* 700+ Card */}
@@ -23,7 +23,7 @@ const BentoInfo = () => {
 
           {/* IT Park Residents Card */}
           <a href="https://it-park.uz/uz/itpark" target="_blank" rel="noopener noreferrer" className="bento-card bento-itpark">
-            <img src="/Блок доп.инфо/Logo_IT_Park_Uzbekistan.svg 2.png" alt="IT Park" className="bento-logo-itpark" />
+            <img src="/images/info/Logo_IT_Park_Uzbekistan.svg 2.png" alt="IT Park" className="bento-logo-itpark" />
             <h3 className="bento-title">{t.itParkTitle}</h3>
             <p className="bento-subtitle">{t.itParkSubtitle}</p>
           </a>
@@ -31,7 +31,7 @@ const BentoInfo = () => {
           {/* PRO Business Card */}
           <a href="https://www.instagram.com/probusiness.tashkent/" target="_blank" rel="noopener noreferrer" className="bento-card bento-probusiness">
             <p className="bento-label">{t.proBusinessLabel}</p>
-            <img src="/Блок доп.инфо/PRO BUSINESS.png" alt="PRO BUSINESS" className="bento-logo-probusiness" />
+            <img src="/images/info/PRO BUSINESS.png" alt="PRO BUSINESS" className="bento-logo-probusiness" />
           </a>
 
           {/* Top AI Experts Card */}
@@ -41,8 +41,8 @@ const BentoInfo = () => {
               <p className="bento-experts-text">{t.expertsText}</p>
             </div>
             <div className="bento-experts-logos">
-              <img src="/Блок доп.инфо/AICA logo.png" alt="AICA" className="bento-logo-aica" />
-              <img src="/Блок доп.инфо/Yuksalish.png" alt="Yuksalish" className="bento-logo-yuksalish" />
+              <img src="/images/info/AICA logo.png" alt="AICA" className="bento-logo-aica" />
+              <img src="/images/info/Yuksalish.png" alt="Yuksalish" className="bento-logo-yuksalish" />
             </div>
           </a>
         </div>

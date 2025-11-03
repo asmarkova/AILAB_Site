@@ -7,15 +7,15 @@ const AIAcademy = () => {
   const { language } = useLanguage();
   const t = translations[language]?.aiAcademy || translations.ru.aiAcademy;
   const images = [
-    '/training-photos/1-compressed.jpeg',
-    '/training-photos/2-compressed.jpeg',
-    '/training-photos/3-compressed.jpeg',
-    '/training-photos/4-compressed.jpeg',
-    '/training-photos/5-compressed.jpeg',
-    '/training-photos/6-compressed.jpeg',
-    '/training-photos/7-compressed.jpeg',
-    '/training-photos/8-compressed.jpeg',
-    '/training-photos/9-compressed.jpeg'
+    '/images/training/1-compressed.jpeg',
+    '/images/training/2-compressed.jpeg',
+    '/images/training/3-compressed.jpeg',
+    '/images/training/4-compressed.jpeg',
+    '/images/training/5-compressed.jpeg',
+    '/images/training/6-compressed.jpeg',
+    '/images/training/7-compressed.jpeg',
+    '/images/training/8-compressed.jpeg',
+    '/images/training/9-compressed.jpeg'
   ];
 
   const { currentIndex, goToNext, goToPrev, pauseAutoPlay, resumeAutoPlay } = useSlider(

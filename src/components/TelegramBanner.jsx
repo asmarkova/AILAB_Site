@@ -10,7 +10,7 @@ const TelegramBanner = () => {
       <div className="container">
         <div className="telegram-banner-wrapper">
           <div className="telegram-photo">
-            <img src="/Team/Артем Панферов-compressed.jpeg" alt="Artem Panferov" />
+            <img src="/images/team/Артем Панферов-compressed.jpeg" alt="Artem Panferov" />
           </div>
           <div className="telegram-content">
             <h3 className="telegram-title">{t.title}</h3>

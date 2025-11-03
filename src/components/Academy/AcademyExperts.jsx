@@ -9,7 +9,7 @@ const AcademyExperts = () => {
     {
       name: t.artem.name,
       role: t.artem.role,
-      photo: '/Team/Артем Панферов-compressed.jpeg',
+      photo: '/images/team/Артем Панферов-compressed.jpeg',
       bio: t.artem.bio,
       links: [
         {
@@ -44,7 +44,7 @@ const AcademyExperts = () => {
     {
       name: t.pavel.name,
       role: t.pavel.role,
-      photo: '/Team/Павел-compressed.jpeg',
+      photo: '/images/team/Павел-compressed.jpeg',
       bio: t.pavel.bio,
       links: [
         {

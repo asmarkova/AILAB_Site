@@ -12,22 +12,22 @@ const Team = () => {
     {
       name: 'Artem Panferov',
       role: 'Founder, CEO, AI Optimization Expert',
-      photo: '/Team/Артем Панферов-compressed.jpeg'
+      photo: '/images/team/Артем Панферов-compressed.jpeg'
     },
     {
       name: 'Anastasia Markova',
       role: 'Co-Founder, Creative Director',
-      photo: '/Team/Анастасия Маркова.jpeg'
+      photo: '/images/team/Анастасия Маркова.jpeg'
     },
     {
       name: 'Pavel Panferov',
       role: 'Co-Founder, Head of development, Business Analyst',
-      photo: '/Team/Павел-compressed.jpeg'
+      photo: '/images/team/Павел-compressed.jpeg'
     },
     {
       name: 'Sergey Kazharaliev',
       role: 'Co-Founder, COO, Business Analyst',
-      photo: '/Team/Sergey Kazharaliev-compressed.jpeg'
+      photo: '/images/team/Sergey Kazharaliev-compressed.jpeg'
     }
   ];
 
