@@ -1,15 +1,16 @@
+import { useLanguage } from '../../contexts/LanguageContext';
+import { translations } from '../../translations/translations';
+
 const AcademyExperts = () => {
+  const { language } = useLanguage();
+  const t = translations[language]?.academyPage?.experts || translations.ru.academyPage.experts;
+
   const experts = [
     {
-      name: 'Artem Panferov',
-      role: 'Founder & CEO AI LAB, AI Optimization Expert',
+      name: t.artem.name,
+      role: t.artem.role,
       photo: '/Team/Артем Панферов-compressed.jpeg',
-      bio: [
-        'Серийный IT-предприниматель, CEO и основатель AI LAB, EndCode и Angel Connect.',
-        'С 2018 года оптимизировал процессы в крупных энтерпрайзах: маркетплейс Ozon, DNS, Азбука Вкуса',
-        'Эксперт по AI-оптимизации бизнес-процессов. Ментор IT-стартапов',
-        'AI-спикер и партнер бизнес-клуба ProBusiness для предпринимателей и топ-менеджеров в Ташкенте'
-      ],
+      bio: t.artem.bio,
       links: [
         {
           label: 'Telegram',
@@ -41,14 +42,10 @@ const AcademyExperts = () => {
       ]
     },
     {
-      name: 'Pavel Panferov',
-      role: 'Co-Founder AI LAB, Head of AI Development',
+      name: t.pavel.name,
+      role: t.pavel.role,
       photo: '/Team/Павел-compressed.jpeg',
-      bio: [
-        'Соосновать и Руководитель отдела AI-разработки AI LAB и EndCode, студии разработки мобильных приложений',
-        'Бизнес-аналитик, консультант в области AI-оптимизации бизнес-процессов',
-        'Спикер и ментор EdTech проектов и обучающих программ SkillBox и Zerocoder'
-      ],
+      bio: t.pavel.bio,
       links: [
         {
           label: 'Telegram',
@@ -76,9 +73,9 @@ const AcademyExperts = () => {
     <section id="academy-experts" className="section academy-experts">
       <div className="container">
         <div className="academy-experts-header">
-          <h2 className="academy-experts-title">Эксперты AI LAB Academy</h2>
+          <h2 className="academy-experts-title">{t.title}</h2>
           <p className="academy-experts-subtitle">
-            Практики с реальным опытом внедрения AI в бизнесе
+            {t.subtitle}
           </p>
         </div>
         <div className="academy-experts-grid">

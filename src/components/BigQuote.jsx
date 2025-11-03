@@ -1,10 +1,16 @@
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
+
 const BigQuote = () => {
+  const { language } = useLanguage();
+  const t = translations[language]?.bigQuote || translations.ru.bigQuote;
+
   return (
     <section className="section big-quote-section">
       <div className="container">
         <div className="big-quote">
           <blockquote>
-            <p>"Нейросети — не соперник и не конкурент человека, а экзоскелет для эффективности мозга и бизнеса. И мы помогаем достичь этого"</p>
+            <p>"{t.text}"</p>
           </blockquote>
         </div>
       </div>

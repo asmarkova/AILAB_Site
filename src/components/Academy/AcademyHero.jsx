@@ -1,6 +1,10 @@
 import { MeshGradientAcademy } from './MeshGradientAcademy';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { translations } from '../../translations/translations';
 
 const AcademyHero = () => {
+  const { language } = useLanguage();
+  const t = translations[language]?.academyPage?.hero || translations.ru.academyPage.hero;
   const handleLinkClick = (e, href) => {
     e.preventDefault();
 
@@ -27,10 +31,20 @@ const AcademyHero = () => {
       <div className="container">
         <div className="academy-hero-content">
           <h1 className="academy-hero-title">
-            Корпоративные<br />AI-тренинги от AI LAB
+            {t.title.split('\n').map((line, i) => (
+              <span key={i}>
+                {line}
+                {i < t.title.split('\n').length - 1 && <br />}
+              </span>
+            ))}
           </h1>
           <p className="academy-hero-subtitle">
-            Превращаем потенциал человека и силу ИИ<br />в конкурентное преимущество вашей компании
+            {t.subtitle.split('\n').map((line, i) => (
+              <span key={i}>
+                {line}
+                {i < t.subtitle.split('\n').length - 1 && <br />}
+              </span>
+            ))}
           </p>
           <div className="academy-hero-actions">
             <a
@@ -38,7 +52,7 @@ const AcademyHero = () => {
               className="btn btn-primary btn-lg"
               onClick={(e) => handleLinkClick(e, '#academy-cta')}
             >
-              Запросить обучение
+              {t.cta}
             </a>
           </div>
         </div>

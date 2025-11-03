@@ -1,6 +1,10 @@
 import { ParticlesBackground } from './Background/ParticlesBackground';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 
 const Hero = () => {
+  const { language } = useLanguage();
+  const t = translations[language]?.hero || translations.ru.hero;
   const handleLinkClick = (e, href) => {
     e.preventDefault();
 
@@ -24,12 +28,12 @@ const Hero = () => {
         <div className="hero-layout">
           <div className="hero-main">
             <h1 className="hero-title">
-              <span className="hero-line">AI-лаборатория</span>
-              <span className="hero-line">оптимизации бизнеса</span>
+              <span className="hero-line">{t.title1}</span>
+              <span className="hero-line">{t.title2}</span>
             </h1>
-            <p className="hero-subtitle">Объединяем потенциал человека и силу AI в бизнесе</p>
+            <p className="hero-subtitle">{t.subtitle}</p>
             <a href="#forma" className="btn btn-hero" onClick={(e) => handleLinkClick(e, '#forma')}>
-              Обсудить проект
+              {t.cta}
             </a>
           </div>
         </div>

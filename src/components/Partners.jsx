@@ -1,4 +1,9 @@
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
+
 const Partners = () => {
+  const { language } = useLanguage();
+  const t = translations[language]?.partners || translations.ru.partners;
   const partners = [
     {
       name: 'IT Park Uzbekistan',
@@ -41,8 +46,8 @@ const Partners = () => {
     <section className="section partners">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Партнеры AI LAB</h2>
-          <p className="partners-subtitle">Партнеры совместных проектов с AI Лабораторией AI LAB</p>
+          <h2 className="section-title">{t.title}</h2>
+          <p className="partners-subtitle">{t.subtitle}</p>
         </div>
         <div className="partners-grid">
           <div className="partners-scroll">

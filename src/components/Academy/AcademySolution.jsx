@@ -1,6 +1,10 @@
 import { useSlider } from '../../hooks/useSlider';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { translations } from '../../translations/translations';
 
 const AcademySolution = () => {
+  const { language } = useLanguage();
+  const t = translations[language]?.academyPage?.solution || translations.ru.academyPage.solution;
   const images = [
     '/training-photos/1-compressed.jpeg',
     '/training-photos/2-compressed.jpeg',
@@ -23,29 +27,29 @@ const AcademySolution = () => {
     <section id="academy-solution" className="section academy-solution">
       <div className="container">
         <div className="academy-solution-header">
-          <h2 className="academy-solution-title">Решение — AI LAB Academy</h2>
+          <h2 className="academy-solution-title">{t.title}</h2>
           <p className="academy-solution-subtitle">
-            Превращаем искусственный интеллект в инструмент роста для вашей команды
+            {t.subtitle}
           </p>
         </div>
         <div className="academy-solution-content">
           <div className="academy-results">
             <div className="academy-result-card">
-              <h3 className="academy-result-title">Снижение операционных затрат на 10–30%</h3>
+              <h3 className="academy-result-title">{t.results.cost.title}</h3>
               <p className="academy-result-text">
-                Автоматизация рутинных процессов освобождает ресурсы для стратегических задач
+                {t.results.cost.text}
               </p>
             </div>
             <div className="academy-result-card">
-              <h3 className="academy-result-title">Экономия 5–10 часов в неделю</h3>
+              <h3 className="academy-result-title">{t.results.time.title}</h3>
               <p className="academy-result-text">
-                Каждый сотрудник получает больше времени на творческие и важные задачи
+                {t.results.time.text}
               </p>
             </div>
             <div className="academy-result-card">
-              <h3 className="academy-result-title">Реальные кейсы и готовые решения</h3>
+              <h3 className="academy-result-title">{t.results.cases.title}</h3>
               <p className="academy-result-text">
-                Разбираем задачи сотрудников и создаем инструменты автоматизации под них
+                {t.results.cases.text}
               </p>
             </div>
           </div>

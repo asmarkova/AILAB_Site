@@ -1,6 +1,10 @@
 import { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 
 const YouTubeVideo = () => {
+  const { language } = useLanguage();
+  const t = translations[language]?.youtubeVideo || translations.ru.youtubeVideo;
   const [isPlaying, setIsPlaying] = useState(false);
 
   // YouTube video ID из https://www.youtube.com/watch?v=SNbR5LD-ApM
@@ -40,14 +44,14 @@ const YouTubeVideo = () => {
             </div>
           )}
           <div className="youtube-info">
-            <h3 className="youtube-title">Смотрите больше на нашем YouTube канале</h3>
+            <h3 className="youtube-title">{t.title}</h3>
             <a
               href="https://www.youtube.com/@AI_panferov"
               target="_blank"
               rel="noopener noreferrer"
               className="youtube-channel-link"
             >
-              Перейти на канал →
+              {t.channelLink}
             </a>
           </div>
         </div>

@@ -1,7 +1,11 @@
 import { useSlider } from '../hooks/useSlider';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 
 const AIAcademy = () => {
+  const { language } = useLanguage();
+  const t = translations[language]?.aiAcademy || translations.ru.aiAcademy;
   const images = [
     '/training-photos/1-compressed.jpeg',
     '/training-photos/2-compressed.jpeg',
@@ -28,15 +32,15 @@ const AIAcademy = () => {
     <section id="academy" className="section ai-academy">
       <div className="container">
         <div className="academy-wrapper">
-          <div className="academy-badge">Популярно сегодня</div>
+          <div className="academy-badge">{t.badge}</div>
           <div className="academy-content">
             <div className="academy-info">
-              <h2 className="academy-title">AI Academy</h2>
+              <h2 className="academy-title">{t.title}</h2>
               <p className="academy-subtitle">
-                Корпоративные тренинги, которые превращают AI-технологии в конкурентное преимущество вашей компании от эксперта лаборатории Артема Панферова
+                {t.subtitle}
               </p>
               <Link to="/academy" className="btn btn-primary btn-academy" onClick={handleAcademyClick}>
-                Узнать больше
+                {t.learnMore}
               </Link>
             </div>
           <div className="academy-slider-wrapper">

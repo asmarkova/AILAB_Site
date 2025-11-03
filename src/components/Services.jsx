@@ -1,26 +1,32 @@
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
+
 const Services = () => {
+  const { language } = useLanguage();
+  const t = translations[language]?.services || translations.ru.services;
+
   const services = [
     {
       number: '01',
-      name: 'AI Academy',
-      description: 'Обучающие сессии от экспертов AI LAB для корпоративных команд по использованию искусственного интеллекта в процессах работы'
+      name: t.academy.name,
+      description: t.academy.description
     },
     {
       number: '02',
-      name: 'AI Audit',
-      description: 'Исследование бизнес-процессов вашей компании, выявление точек роста и формирование дорожной карты AI-автоматизации'
+      name: t.audit.name,
+      description: t.audit.description
     },
     {
       number: '03',
-      name: 'AI Development',
-      description: 'Разработка и внедрение кастомных решений для автоматизации бизнес-процессов вашей компании с помощью искусственного интеллекта'
+      name: t.development.name,
+      description: t.development.description
     }
   ];
 
   return (
     <section id="services" className="section services">
       <div className="container">
-        <h2 className="services-title">Направления лаборатории</h2>
+        <h2 className="services-title">{t.title}</h2>
         <div className="services-grid-new">
           {services.map((service, index) => (
             <div key={index} className="service-card-new" data-animate>

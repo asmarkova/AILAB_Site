@@ -100,7 +100,7 @@ const HomePage = () => {
         description={seoData.description}
         keywords={seoData.keywords}
         url="https://ai-lab.company/"
-        image="https://ai-lab.company/og-image-home.jpg"
+        image="https://ai-lab.company/og-image.png"
         canonicalUrl="https://ai-lab.company/"
         schemaData={homeSchema}
       />

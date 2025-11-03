@@ -1,4 +1,9 @@
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
+
 const ProjectsCTA = () => {
+  const { language } = useLanguage();
+  const t = translations[language]?.projectsCTA || translations.ru.projectsCTA;
   const handleLinkClick = (e, href) => {
     e.preventDefault();
 
@@ -21,10 +26,10 @@ const ProjectsCTA = () => {
         <div className="projects-cta-wrapper">
           <div className="projects-cta-content">
             <h3 className="projects-cta-title">
-              Ваш проект может быть следующим в этом списке
+              {t.title}
             </h3>
             <p className="projects-cta-text">
-              Расскажите о своих задачах в Telegram. Проведем бесплатную консультацию и покажем, как AI может трансформировать и усилить ваш бизнес
+              {t.text}
             </p>
           </div>
           <div className="projects-cta-button">
@@ -34,7 +39,7 @@ const ProjectsCTA = () => {
               rel="noopener noreferrer"
               className="btn btn-primary btn-projects-cta"
             >
-              Обсудить проект
+              {t.button}
             </a>
           </div>
         </div>

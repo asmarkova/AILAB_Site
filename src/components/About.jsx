@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 
 const About = () => {
+  const { language } = useLanguage();
+  const t = translations[language]?.about || translations.ru.about;
   const [projectsCount, setProjectsCount] = useState(0);
   const [yearCount, setYearCount] = useState(1);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -68,21 +72,21 @@ const About = () => {
           <div className="about-stats-left" ref={statsRef}>
             <div className="stat-item-large">
               <div className="stat-number">{projectsCount}+</div>
-              <div className="stat-label">РЕАЛИЗОВАНО<br />ПРОЕКТОВ</div>
+              <div className="stat-label" dangerouslySetInnerHTML={{ __html: t.projectsLabel }}></div>
             </div>
             <div className="stat-item-large">
               <div className="stat-number">{yearCount}</div>
-              <div className="stat-label">РАБОТАЕМ С</div>
+              <div className="stat-label">{t.workingSinceLabel}</div>
             </div>
           </div>
           <div className="about-text-content">
-            <h2 className="about-heading">О нас</h2>
-            <p className="about-description">Мы — AI LAB, AI-лаборатория оптимизации бизнеса.</p>
-            <p className="about-description">Наши эксперты изучают и разрабатывают инструменты на основе искусственного интеллекта, которые помогают оптимизировать бизнес-процессы компаний.</p>
+            <h2 className="about-heading">{t.title}</h2>
+            <p className="about-description">{t.description1}</p>
+            <p className="about-description">{t.description2}</p>
           </div>
           <div className="about-quote">
             <blockquote>
-              <p className="quote-highlight">Мы помогаем компаниям объединить силу искусственного интеллекта и потенциал человека. Повысить эффективность, сократить издержки и получить конкурентное преимущество на рынке с помощью AI-экспертизы.</p>
+              <p className="quote-highlight">{t.quote}</p>
             </blockquote>
           </div>
         </div>

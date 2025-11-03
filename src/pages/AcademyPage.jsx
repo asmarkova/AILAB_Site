@@ -56,7 +56,7 @@ const AcademyPage = () => {
         description="Корпоративное обучение работе с нейросетями: ChatGPT, Midjourney, AI-агенты. Практические тренинги для команд. Онлайн и офлайн форматы. Сертификат AI LAB. Повысьте эффективность бизнеса с ИИ."
         keywords="корпоративное обучение нейросетям, обучение работе с ChatGPT, курсы по искусственному интеллекту, AI тренинги для бизнеса, обучение сотрудников ИИ, промпт инжиниринг обучение, Midjourney обучение, GPT для бизнеса курсы, корпоративные AI тренинги, обучение AI агентам, практические курсы по нейросетям"
         url="https://ai-lab.company/academy"
-        image="https://ai-lab.company/og-image-academy.jpg"
+        image="https://ai-lab.company/og-image-academy.png"
         type="website"
         canonicalUrl="https://ai-lab.company/academy"
         schemaData={academySchema}

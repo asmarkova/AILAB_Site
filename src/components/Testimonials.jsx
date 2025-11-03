@@ -1,7 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 
 const Testimonials = () => {
-  const testimonials = [
+  const { language } = useLanguage();
+  const t = translations[language]?.testimonials || translations.ru.testimonials;
+
+  const testimonialsRu = [
     {
       name: 'Рустам Джураев',
       position: 'Начальник отдела стратегии и аналитики IT Park Uzbekistan',
@@ -39,6 +44,13 @@ const Testimonials = () => {
       text: 'Программа действительно получилась интересной и продуманной. Всё было проведено достаточно подробно. Думаю, что мы обязательно проведём ещё одну сессию, чтобы закрепить результат. Хочу добавить: было комфортно, легко и познавательно.'
     }
   ];
+
+  const testimonialsEn = (t?.reviews || []).map((review, index) => ({
+    ...review,
+    photo: testimonialsRu[index]?.photo
+  }));
+
+  const testimonials = language === 'ru' ? testimonialsRu : (testimonialsEn.length > 0 ? testimonialsEn : testimonialsRu);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -192,14 +204,14 @@ const Testimonials = () => {
       <div className="container">
         <div className="testimonials-header">
           <div className="testimonials-header-content">
-            <h2 className="testimonials-title">Отзывы</h2>
-            <p className="testimonials-subtitle">Что говорят наши клиенты</p>
+            <h2 className="testimonials-title">{t.title}</h2>
+            <p className="testimonials-subtitle">{t.subtitle}</p>
           </div>
           <div className="testimonials-controls">
             <button
               className="slider-btn slider-btn-prev"
               onClick={handlePrev}
-              aria-label="Предыдущий отзыв"
+              aria-label={t.prevBtn}
             >
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -208,7 +220,7 @@ const Testimonials = () => {
             <button
               className="slider-btn slider-btn-next"
               onClick={handleNext}
-              aria-label="Следующий отзыв"
+              aria-label={t.nextBtn}
             >
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -269,7 +281,7 @@ const Testimonials = () => {
                 setIsAutoPlaying(false);
                 setCurrentIndex(index);
               }}
-              aria-label={`Перейти к отзыву ${index + 1}`}
+              aria-label={`${t.goToReview} ${index + 1}`}
             />
           ))}
         </div>

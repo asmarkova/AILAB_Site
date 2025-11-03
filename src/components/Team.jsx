@@ -1,6 +1,10 @@
 import { useRef, useState, useEffect } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 
 const Team = () => {
+  const { language } = useLanguage();
+  const t = translations[language]?.team || translations.ru.team;
   const sliderTrackRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -24,26 +28,6 @@ const Team = () => {
       name: 'Sergey Kazharaliev',
       role: 'Co-Founder, COO, Business Analyst',
       photo: '/Team/Sergey Kazharaliev-compressed.jpeg'
-    },
-    {
-      name: 'Nikita Terentyev',
-      role: 'Developer, AI Architect',
-      photo: '/Team/Nikita Terentyev.jpeg'
-    },
-    {
-      name: 'Shahzod Usmanov',
-      role: 'Developer, AI Architect',
-      photo: '/Team/Шахзод усманов.jpeg'
-    },
-    {
-      name: 'Abdulbosit Holikov',
-      role: 'Developer',
-      photo: '/Team/Abdulbosit-compressed.jpeg'
-    },
-    {
-      name: 'Aziza Maksumova',
-      role: 'Business Assistant, Project Manager',
-      photo: '/Team/Aziza-compressed.jpeg'
     }
   ];
 
@@ -88,12 +72,12 @@ const Team = () => {
     <section id="team" className="section team">
       <div className="container">
         <div className="team-header">
-          <h2 className="team-title">Специалисты лаборатории</h2>
+          <h2 className="team-title">{t.title}</h2>
           <div className="team-controls">
             <button
               className="slider-btn slider-btn-prev"
               onClick={handlePrev}
-              aria-label="Предыдущий"
+              aria-label={t.prevBtn}
             >
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -102,7 +86,7 @@ const Team = () => {
             <button
               className="slider-btn slider-btn-next"
               onClick={handleNext}
-              aria-label="Следующий"
+              aria-label={t.nextBtn}
             >
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>

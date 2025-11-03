@@ -1,6 +1,10 @@
 import { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 
 const Articles = () => {
+  const { language } = useLanguage();
+  const t = translations[language]?.articles || translations.ru.articles;
   const [currentPage, setCurrentPage] = useState(0);
 
   const articles = [
@@ -170,14 +174,14 @@ const Articles = () => {
     <section className="section articles">
       <div className="container">
         <div className="articles-header">
-          <h2 className="section-title">Статьи и публикации</h2>
+          <h2 className="section-title">{t.title}</h2>
           <div className="articles-controls">
-            <button className="slider-btn" onClick={prevPage} aria-label="Предыдущие статьи">
+            <button className="slider-btn" onClick={prevPage} aria-label={t.prevBtn}>
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
-            <button className="slider-btn" onClick={nextPage} aria-label="Следующие статьи">
+            <button className="slider-btn" onClick={nextPage} aria-label={t.nextBtn}>
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -207,7 +211,7 @@ const Articles = () => {
               key={index}
               className={`carousel-dot ${index === currentPage ? 'active' : ''}`}
               onClick={() => setCurrentPage(index)}
-              aria-label={`Страница ${index + 1}`}
+              aria-label={`${t.pageLabel} ${index + 1}`}
             />
           ))}
         </div>
