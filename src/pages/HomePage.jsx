@@ -56,8 +56,8 @@ const HomePage = () => {
       professionalServiceSchema,
       createWebPageSchema(
         "AI LAB — Разработка AI-агентов и автоматизация бизнеса",
-        "https://ai-lab.company/",
-        [{ name: "Главная", url: "https://ai-lab.company/" }]
+        "https://ailab.uz/",
+        [{ name: "Главная", url: "https://ailab.uz/" }]
       ),
       createFAQSchema(homePageFAQs)
     ]
@@ -99,9 +99,9 @@ const HomePage = () => {
         title={seoData.title}
         description={seoData.description}
         keywords={seoData.keywords}
-        url="https://ai-lab.company/"
-        image="https://ai-lab.company/og-image.png"
-        canonicalUrl="https://ai-lab.company/"
+        url="https://ailab.uz/"
+        image="https://ailab.uz/og-image.png"
+        canonicalUrl="https://ailab.uz/"
         schemaData={homeSchema}
       />
       <Navigation />

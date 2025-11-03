@@ -9,8 +9,8 @@ export const organizationSchema = {
   "@type": "Organization",
   "name": "AI LAB",
   "alternateName": "AI Laboratory",
-  "url": "https://ai-lab.company",
-  "logo": "https://ai-lab.company/logo.png",
+  "url": "https://ailab.uz",
+  "logo": "https://ailab.uz/AI LAB лого.png",
   "description": "Оптимизация бизнеса с помощью искусственного интеллекта. Корпоративное обучение работе с нейросетями. AI-аудит. Разработка AI-инструментов для бизнеса.",
   "email": "manager@ai-lab.company",
   "address": {
@@ -55,8 +55,8 @@ export const professionalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "AI LAB — Оптимизация бизнеса с помощью искусственного интеллекта",
-  "image": "https://ai-lab.company/logo.png",
-  "url": "https://ai-lab.company",
+  "image": "https://ailab.uz/AI LAB лого.png",
+  "url": "https://ailab.uz",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "UZ",
@@ -110,7 +110,7 @@ export const educationalOrganizationSchema = {
   "@type": "EducationalOrganization",
   "name": "AI Academy by AI LAB",
   "description": "Корпоративное обучение работе с нейросетями и искусственным интеллектом от эксперта Артема Панферова",
-  "url": "https://ai-lab.company/academy",
+  "url": "https://ailab.uz/academy",
   "email": "manager@ai-lab.company",
   "parentOrganization": {
     "@type": "Organization",
@@ -174,7 +174,7 @@ export const courseSchema = {
   "provider": {
     "@type": "EducationalOrganization",
     "name": "AI Academy by AI LAB",
-    "url": "https://ai-lab.company/academy"
+    "url": "https://ailab.uz/academy"
   },
   "hasCourseInstance": [
     {
@@ -232,9 +232,9 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "AI LAB",
-  "image": "https://ai-lab.company/logo.png",
-  "@id": "https://ai-lab.company",
-  "url": "https://ai-lab.company",
+  "image": "https://ailab.uz/logo.png",
+  "@id": "https://ailab.uz",
+  "url": "https://ailab.uz",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
