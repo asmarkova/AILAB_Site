@@ -87,8 +87,9 @@ const S = {
     background: '#22c55e', display: 'inline-block',
   },
   heroTitle: {
-    fontSize: 'clamp(3.5rem, 10vw, 9rem)', fontWeight: 400,
-    lineHeight: 0.88, letterSpacing: '-0.04em', marginBottom: '1.5rem',
+    fontSize: 'clamp(3.5rem, 8vw, 7.5rem)', fontWeight: 400,
+    lineHeight: 0.92, letterSpacing: '-0.04em', marginBottom: '1.5rem',
+    whiteSpace: 'nowrap',
   },
   heroTitleAccent: {
     background: 'linear-gradient(to right, #8b5cf6, #a78bfa)',
