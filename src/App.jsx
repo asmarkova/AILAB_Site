@@ -5,6 +5,7 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import './styles.css';
 import HomePage from './pages/HomePage';
 import AcademyPage from './pages/AcademyPage';
+import ProBusinessPage from './pages/ProBusinessPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/academy" element={<AcademyPage />} />
+            <Route path="/probusiness_aicourse" element={<ProBusinessPage />} />
           </Routes>
         </Router>
         <Analytics />
